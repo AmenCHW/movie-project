@@ -1,6 +1,6 @@
 'use strict';
 
-const TMDB_BASE_URL = "https://api.themoviedb.org/3/person/";
+const TMDB_BASE_URL = "https://api.themoviedb.org/3";
 const PROFILE_BASE_URL = "http://image.tmdb.org/t/p/w500";
 const BACKDROP_BASE_URL = "http://image.tmdb.org/t/p/w780";
 const CONTAINER = document.querySelector(".container");
@@ -12,7 +12,7 @@ const autorun2 = async () => {
 };
 const constructUrl = (path) => {
   return `${TMDB_BASE_URL }/${path}?api_key=${atob(
-    "3356865d41894a2fa9bfa84b2b5f59bb"
+    "NTQyMDAzOTE4NzY5ZGY1MDA4M2ExM2M0MTViYmM2MDI="
   )}`;
 };
 
@@ -44,7 +44,7 @@ const fetchActor = async (actorId) => {
 };
 // renderActors Function
 const renderActors = (actors) => {
-  deletingContainerContent();
+  //deletingContainerContent();
   const newDiv2 = document.createElement("div");
   newDiv2.classList.add(
     "grid",
@@ -113,5 +113,6 @@ const renderActor = (actor, movieCredits) => {
     </ul>
 </div>`;
 };
-document.getElementById("upComing").addEventListener("click",upComingMovies);
-document.getElementById("actors").addEventListener("click",autorun2);
+
+document.addEventListener("DOMContentLoaded", autorun2);
+
