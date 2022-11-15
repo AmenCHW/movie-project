@@ -5,9 +5,11 @@ const PROFILE_BASE_URL = "http://image.tmdb.org/t/p/w185";
 const BACKDROP_BASE_URL = "http://image.tmdb.org/t/p/w780";
 const CONTAINER = document.querySelector(".container");
 
+const API = "https://api.themoviedb.org/3/movie/now_playing?api_key=542003918769df50083a13c415bbc602"
 // Don't touch this function please
 const autorun = async () => {
   const movies = await fetchMovies();
+  console.log(movies);
   renderMovies(movies.results);
 };
 
@@ -20,9 +22,11 @@ const constructUrl = (path) => {
 
 // You may need to add to this function, definitely don't delete it.
 const movieDetails = async (movie) => {
+   const url = constructUrl(`movie/now_playing`);
   const movieRes = await fetchMovie(movie.id);
   renderMovie(movieRes);
 };
+
 
 // This function is to fetch movies. You may need to add it or change some part in it in order to apply some of the features.
 const fetchMovies = async () => {
