@@ -109,13 +109,9 @@ const renderActor = (actor, movieCredits) => {
         <li>
            <a href="#"> ${movieCredits.cast[4].title}</a>
         </li>
-        <li>
-           <a href="#"> ${movieCredits.cast[5].title}</a>
-        </li>
-        <li>
-          <a href="#"> ${movieCredits.cast[6].title}</a>
-         </li>
+  
     </ul>
 </div>`;
 };
-document.addEventListener("DOMContentLoaded", autorun2);
+document.getElementById("upComing").addEventListener("click",upComingMovies);
+document.getElementById("actors").addEventListener("click",autorun2);
